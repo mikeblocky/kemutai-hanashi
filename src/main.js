@@ -121,7 +121,7 @@ const characterProfiles = {
     ],
     answers: [
       ["First met Takeda", "Around age 17."],
-      ["Became partners", "Around age ??? (he doesn't know)."],
+      ["Became partners", "Around age 20??? (he doesn't know)."],
       ["Can read Takeda's mind?", "Yes."],
       ["Takeda as a person", "Likes him."],
       ["Takeda as a partner", "Can trust him."],
