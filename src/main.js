@@ -97,6 +97,12 @@ const characterProfiles = {
       ["Shift", "Everything slides out of alignment."],
       ["Tomato", "The tomato gets pulled along with the lettuce and falls onto the wrapper."],
       ["Result", "The burger is missing its greens, with one lonely slice of tomato left outside."]
+    ],
+    vector: [
+      ["Direction", "Toward Arita himself."],
+      ["Basis", "Arita has directed feelings toward Takeda that no one else ever has."],
+      ["Approach", "While he knows Arita interacts with other people, his basic way of facing Arita is strictly one-on-one."],
+      ["Significance", "Arita may be the first person Takeda has ever truly tried to face in a one-on-one manner."]
     ]
   },
   arita: {
@@ -138,6 +144,12 @@ const characterProfiles = {
       ["Bite", "He cannot bite through all the layers at once, so the bite skews toward either the top or the bottom."],
       ["Small note", "Small mouth."],
       ["Result", "A small, clean bite comes out of only the top bun and the first few layers."]
+    ],
+    vector: [
+      ["Direction", "Toward Takeda in relation to others."],
+      ["Basis", "At the root there is admiration for Takeda's ability to live for the sake of other people."],
+      ["Approach", "His sense of Takeda is shaped by how Takeda exists among people other than himself."],
+      ["Significance", "Because of that admiration, the feeling of wanting Takeda to be with him for his own sake is comparatively thin."]
     ]
   },
   ryuu: {
@@ -328,6 +340,7 @@ app.innerHTML = `
         <button class="hud-button hud-button-pink" id="switch-trigger" type="button">Swap</button>
         <button class="hud-button hud-button-mint" id="inspect-trigger" type="button">Open</button>
         <button class="hud-button hud-button-cream" id="fullscreen-trigger" type="button">Full</button>
+        <button class="hud-button hud-button-cream" id="simple-trigger" type="button">Simple</button>
       </div>
     </header>
 
@@ -335,6 +348,28 @@ app.innerHTML = `
       <div class="hint-card">
         <strong id="status-title">Walk</strong>
         <p id="status-copy">Press E near a bubble.</p>
+      </div>
+    </div>
+
+    <div class="simple-panel" id="simple-panel">
+      <p class="simple-heading">Kemutai Hanashi</p>
+      <div class="simple-grid">
+        <button class="simple-card" type="button" data-open="author">
+          <span class="simple-icon simple-icon-author"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+          <span class="simple-label">Author</span>
+        </button>
+        <button class="simple-card" type="button" data-open="story">
+          <span class="simple-icon simple-icon-story"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+          <span class="simple-label">Story</span>
+        </button>
+        <button class="simple-card" type="button" data-open="volumes">
+          <span class="simple-icon simple-icon-volumes"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <span class="simple-label">Volumes</span>
+        </button>
+        <button class="simple-card" type="button" data-open="curtains">
+          <span class="simple-icon simple-icon-curtains"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <span class="simple-label">Characters</span>
+        </button>
       </div>
     </div>
 
@@ -386,10 +421,13 @@ const switchTrigger = app.querySelector("#switch-trigger");
 const inspectTrigger = app.querySelector("#inspect-trigger");
 const fullscreenTrigger = app.querySelector("#fullscreen-trigger");
 const touchInspect = app.querySelector("#touch-inspect");
+const simpleTrigger = app.querySelector("#simple-trigger");
+const simplePanel = app.querySelector("#simple-panel");
 
 const state = {
   isNight: true,
   popupOpen: false,
+  simplified: false,
   closestHotspot: null,
   activeVolume: 1,
   activeChapter: 1,
@@ -502,6 +540,7 @@ function renderCharacterProfiles(activeId) {
   const sections = [
     createSection("Profile", profile.basics, "cream"),
     createSection("Notes", profile.answers, "blue"),
+    createSection("Relationship vector", profile.vector, "lavender"),
     createSection("Hands", profile.handNotes, "peach"),
     createSection("Can they eat a huge hamburger skillfully?", profile.hamburger, "green", "hamburger-section"),
     pairOnlySections ? createSection("If they competed together...", characterMatchups, "lavender") : null
@@ -664,6 +703,32 @@ switchTrigger.addEventListener("click", toggleActiveCharacter);
 inspectTrigger.addEventListener("click", openClosestHotspot);
 touchInspect.addEventListener("click", openClosestHotspot);
 fullscreenTrigger.addEventListener("click", toggleFullscreen);
+
+function toggleSimplifiedMode() {
+  if (state.popupOpen) {
+    closeDetailPopup();
+  }
+  state.simplified = !state.simplified;
+  if (state.simplified) {
+    shell.setAttribute("data-simplified", "");
+    simpleTrigger.textContent = "3D";
+    resetMovement();
+  } else {
+    shell.removeAttribute("data-simplified");
+    simpleTrigger.textContent = "Simple";
+    clock.getDelta();
+    requestAnimationFrame(animate);
+  }
+}
+
+simpleTrigger.addEventListener("click", toggleSimplifiedMode);
+
+simplePanel.querySelectorAll("[data-open]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const key = card.getAttribute("data-open");
+    openDetailPopup(key);
+  });
+});
 
 window.addEventListener("mousemove", (event) => {
   state.pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -2722,9 +2787,9 @@ function animate() {
 
   cameraTarget.lerp(
     new THREE.Vector3(
-      activeCharacter.root.position.x * 0.28 - 0.82,
+      activeCharacter.root.position.x * 0.62 - 0.82,
       1.28,
-      activeCharacter.root.position.z * 0.28 + 1.24
+      activeCharacter.root.position.z * 0.62 + 1.24
     ),
     0.08
   );
@@ -2737,7 +2802,9 @@ function animate() {
   camera.lookAt(cameraTarget.x + state.pointer.x * 0.2, cameraTarget.y, cameraTarget.z + state.pointer.y * 0.18);
 
   renderer.render(scene, camera);
-  requestAnimationFrame(animate);
+  if (!state.simplified) {
+    requestAnimationFrame(animate);
+  }
 }
 
 animate();

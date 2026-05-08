@@ -270,6 +270,8 @@ select {
   box-shadow: 0 18px 50px rgba(23, 25, 35, 0.22);
   border: 0;
   overflow: visible;
+  /* Ensure the close button is never clipped */
+  padding-top: 1.5rem;
 }
 
 .detail-popup::before {
@@ -294,6 +296,7 @@ select {
   box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
   display: grid;
   place-items: center;
+  flex-shrink: 0;
 }
 
 .popup-copy {
@@ -700,7 +703,7 @@ select {
   .action-cluster {
     justify-content: stretch;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     width: min(100%, 34rem);
     margin-left: auto;
   }
@@ -711,6 +714,15 @@ select {
     max-height: calc(100dvh - 3.4rem);
     overflow: auto;
     gap: 1rem;
+  }
+
+  .popup-close {
+    position: sticky;
+    top: 0.5rem;
+    z-index: 12;
+    margin-left: auto;
+    margin-bottom: -3.5rem;
+    float: right;
   }
 
   .popup-shell[data-content="volumes"] .detail-popup {
@@ -727,11 +739,11 @@ select {
   }
 
   .popup-shell[data-content="curtains"] .popup-media {
-    order: 2;
+    order: -1;
   }
 
   .popup-shell[data-content="curtains"] .popup-copy {
-    order: 1;
+    order: 2;
   }
 
   .popup-shell[data-content="curtains"] .popup-media img {
@@ -808,7 +820,7 @@ select {
   }
 
   .action-cluster {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0.3rem;
     width: 100%;
   }
@@ -830,10 +842,9 @@ select {
   }
 
   .popup-close {
-    top: -2rem;
-    right: 0;
     width: 3rem;
     height: 3rem;
+    margin-bottom: -3rem;
   }
 
   .popup-copy {
@@ -898,5 +909,124 @@ select {
 
   .popup-shell[data-content="curtains"] .popup-media img {
     height: min(18rem, 34dvh);
+  }
+}
+
+/* ── Simplified mode ── */
+
+.simple-panel {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: auto;
+  padding: 5.5rem 1.5rem 2rem;
+  background: var(--bg-shell-pattern), var(--bg-shell);
+}
+
+.app-shell[data-simplified] .simple-panel {
+  display: block;
+}
+
+.app-shell[data-simplified] .scene-host {
+  display: none;
+}
+
+.app-shell[data-simplified] .touch-controls {
+  display: none !important;
+}
+
+.app-shell[data-simplified] .hud-status {
+  display: none;
+}
+
+.simple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1rem;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.simple-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1.35rem 0.8rem;
+  border: 4px solid #fff;
+  border-radius: 1.25rem;
+  background: var(--hud-bg);
+  color: var(--hud-text);
+  font-family: "Varela Round", sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.08);
+  transition:
+    transform 100ms ease,
+    box-shadow 100ms ease,
+    filter 100ms ease;
+}
+
+.simple-card:hover,
+.simple-card:focus-visible {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.08);
+}
+
+.simple-card:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.simple-icon {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  color: #5c4b41;
+}
+
+.simple-icon svg {
+  display: block;
+}
+
+.simple-icon-author   { background: #fec89a; color: #8c5a2b; }
+.simple-icon-story    { background: #b5e2fa; color: #3b6b8c; }
+.simple-icon-volumes  { background: #f8edeb; color: #7d6b67; }
+.simple-icon-curtains { background: #ffb5a7; color: #8a3c3c; }
+
+.simple-label {
+  text-align: center;
+  line-height: 1.25;
+}
+
+.simple-heading {
+  text-align: center;
+  margin: 0 0 1.25rem;
+  font-family: "Varela Round", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--hud-text);
+}
+
+@media (max-width: 640px) {
+  .simple-panel {
+    padding: 4.8rem 0.75rem 1.5rem;
+  }
+
+  .simple-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .simple-card {
+    padding: 1.1rem 0.6rem;
+    font-size: 0.88rem;
   }
 }
