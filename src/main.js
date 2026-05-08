@@ -147,7 +147,7 @@ const characterProfiles = {
     quote: "Manager and owner of Yamaguchi Flower Shop.",
     basics: [
       ["Job", "Florist manager and owner at Yamaguchi Flower Shop."],
-      ["Relationship", "Connected with Hinato. Arita works at his flower shop."],
+      ["Relationship", "Connected with Hinako. Arita works at his flower shop."],
       ["First appeared", "Chapter 3."]
     ],
     answers: []
@@ -176,8 +176,8 @@ const characterProfiles = {
     ],
     answers: []
   },
-  hinato: {
-    name: "Hinato",
+  hinako: {
+    name: "Hinako",
     icon: "/character_icon/hinato.jpg",
     full: "/character_full/hinato-full.jpg",
     quote: "An old classmate of Takeda.",
@@ -192,10 +192,10 @@ const characterProfiles = {
     name: "Arisu",
     icon: "/character_icon/arisu.jpg",
     full: "/character_full/arisu-full.jpg",
-    quote: "Hinato's daughter.",
+    quote: "Hinako's daughter.",
     basics: [
-      ["Family", "Daughter of Hinato and Hinato's former boyfriend."],
-      ["Care", "Currently cared for by Tachibana, Hinato, and Ryuu."],
+      ["Family", "Daughter of Hinako and Hinako's former boyfriend."],
+      ["Care", "Currently cared for by Tachibana, Hinako, and Ryuu."],
       ["First appeared", "Chapter 9."]
     ],
     answers: []
