@@ -63,10 +63,10 @@ const characterProfiles = {
     quote:
       "A person who is fine with other people not understanding what matters to him, as long as he understands it himself.",
     basics: [
-      ["Full name", "Takeda Tokahiko. The family name is inferred in the current version."],
+      ["Full name", "Takeda Torahiko. The family name is inferred in the current version."],
       ["Height", "177 cm, presumably from the pilot version."],
       ["Gender", "Male"],
-      ["Job", "High-school teacher"],
+      ["Job", "High-school teacher, teaching Japanese (literature)"],
       ["Relationship", "Roommates with Arita."],
       ["Students", "Currently teaches Japanese to Tsukiyama and Tachibana."],
       ["First appeared", "Chapter 1."]
@@ -156,10 +156,10 @@ const characterProfiles = {
     name: "Tsukiyama",
     icon: "/character_icon/tsukiyama.jpg",
     full: "/character_full/tsukiyama-full.jpg",
-    quote: "One of the classmates in the surrounding cast.",
+    quote: "One of the classmates of Tachibana.",
     basics: [
       ["Relationship", "Classmates with Tachibana."],
-      ["Teacher", "Currently being taught Japanese by Takeda."],
+      ["Teacher", "Currently being taught Japanese (literature) by Takeda."],
       ["First appeared", "Chapter 2."]
     ],
     answers: []
@@ -168,10 +168,10 @@ const characterProfiles = {
     name: "Tachibana",
     icon: "/character_icon/tachibana.jpg",
     full: "/character_full/tachibana-full.jpg",
-    quote: "One of the classmates in the surrounding cast.",
+    quote: "One of the classmates of Tsukiyama.",
     basics: [
       ["Relationship", "Classmates with Tsukiyama."],
-      ["Teacher", "Currently being taught Japanese by Takeda."],
+      ["Teacher", "Currently being taught Japanese (literature)by Takeda."],
       ["First appeared", "Chapter 2."]
     ],
     answers: []
