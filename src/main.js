@@ -504,7 +504,7 @@ function renderCharacterProfiles(activeId) {
     createSection("Notes", profile.answers, "blue"),
     createSection("Hands", profile.handNotes, "peach"),
     createSection("Can they eat a huge hamburger skillfully?", profile.hamburger, "green", "hamburger-section"),
-    pairOnlySections ? createSection("If They Competed", characterMatchups, "lavender") : null
+    pairOnlySections ? createSection("If they competed together...", characterMatchups, "lavender") : null
   ].filter(Boolean);
 
   textPanel.append(quote, ...sections);
