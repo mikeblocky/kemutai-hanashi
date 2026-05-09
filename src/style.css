@@ -341,6 +341,37 @@ select {
   flex-wrap: wrap;
 }
 
+.author-sections {
+  display: grid;
+  gap: 0.78rem;
+  width: 100%;
+}
+
+.author-section {
+  display: grid;
+  gap: 0.28rem;
+  padding: 0.72rem 0;
+  border-top: 1px solid rgba(138, 115, 99, 0.18);
+}
+
+.author-section:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.author-section h3 {
+  margin: 0;
+  font-family: "Varela Round", sans-serif;
+  font-size: 0.95rem;
+  color: var(--popup-text);
+}
+
+.author-section p {
+  margin: 0;
+  color: var(--popup-soft);
+  line-height: 1.52;
+}
+
 .volume-archive {
   width: 100%;
   display: grid;
@@ -468,6 +499,42 @@ select {
   border-color: #ef8f77;
 }
 
+.ruby-name {
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.16rem;
+  line-height: 1.12;
+}
+
+.ruby-name ruby {
+  font-weight: 900;
+}
+
+.ruby-name rt {
+  font-size: 0.48em;
+  line-height: 1;
+  color: var(--popup-soft);
+}
+
+.ruby-name-romaji {
+  font-size: 0.72em;
+  color: var(--popup-soft);
+  font-weight: 800;
+}
+
+.ruby-name-picker {
+  font-size: 0.76rem;
+}
+
+.ruby-name-large {
+  justify-items: start;
+  font-size: 1.46rem;
+}
+
+.ruby-name-caption {
+  font-size: 1rem;
+}
+
 .character-text {
   max-height: min(31rem, 56vh);
   overflow: auto;
@@ -485,6 +552,11 @@ select {
 .character-text h3 {
   margin: 0 0 0.45rem;
   font-family: "Varela Round", sans-serif;
+  font-size: 1rem;
+}
+
+.character-text .character-name-heading {
+  margin-bottom: 0.1rem;
   font-size: 1rem;
 }
 

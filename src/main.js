@@ -58,6 +58,7 @@ const volumeArchive = Array.from({ length: 7 }, (_, index) => ({
 const characterProfiles = {
   takeda: {
     name: "Takeda",
+    rubyName: { kanji: "武田 虎彦", kana: "たけだ とらひこ", romaji: "Takeda Torahiko" },
     icon: "/character_icon/takeda.jpg",
     full: "/character_full/takeda-full.jpg",
     quote:
@@ -107,6 +108,7 @@ const characterProfiles = {
   },
   arita: {
     name: "Arita",
+    rubyName: { kanji: "有田 一臣", kana: "ありた かずおみ", romaji: "Arita Kazuomi" },
     icon: "/character_icon/arita.jpg",
     full: "/character_full/arita-full.jpg",
     quote:
@@ -116,7 +118,7 @@ const characterProfiles = {
       ["Height", "173 cm, presumably."],
       ["Gender", "Male"],
       ["Job", "Florist at Yamaguchi Flower Shop. In the pilot version, he was a barber."],
-      ["Relationship", "Roommates with Takeda. Works under Ryuu at Yamaguchi Flower Shop."],
+      ["Relationship", "Roommates with Takeda. Works under Ryuji at Yamaguchi Flower Shop."],
       ["First appeared", "Chapter 1."]
     ],
     answers: [
@@ -153,7 +155,8 @@ const characterProfiles = {
     ]
   },
   ryuu: {
-    name: "Ryuu",
+    name: "Ryuji",
+    rubyName: { kanji: "龍二", kana: "りゅうじ", romaji: "Ryuji" },
     icon: "/character_icon/ryuu.jpg",
     full: "/character_full/ryuu-full.jpg",
     quote: "Manager and owner of Yamaguchi Flower Shop.",
@@ -166,6 +169,7 @@ const characterProfiles = {
   },
   tsukiyama: {
     name: "Tsukiyama",
+    rubyName: { kanji: "月山 環", kana: "つきやま たまき", romaji: "Tsukiyama Tamaki" },
     icon: "/character_icon/tsukiyama.jpg",
     full: "/character_full/tsukiyama-full.jpg",
     quote: "One of the classmates of Tachibana.",
@@ -178,6 +182,7 @@ const characterProfiles = {
   },
   tachibana: {
     name: "Tachibana",
+    rubyName: { kanji: "橘 梨々子", kana: "たちばな りりこ", romaji: "Tachibana Ririko" },
     icon: "/character_icon/tachibana.jpg",
     full: "/character_full/tachibana-full.jpg",
     quote: "One of the classmates of Tsukiyama.",
@@ -190,6 +195,7 @@ const characterProfiles = {
   },
   hinako: {
     name: "Hinako",
+    rubyName: { kanji: "比奈子", kana: "ひなこ", romaji: "Hinako" },
     icon: "/character_icon/hinato.jpg",
     full: "/character_full/hinato-full.jpg",
     quote: "An old classmate of Takeda.",
@@ -202,12 +208,13 @@ const characterProfiles = {
   },
   arisu: {
     name: "Arisu",
+    rubyName: { kanji: "ありす", kana: "ありす", romaji: "Arisu" },
     icon: "/character_icon/arisu.jpg",
     full: "/character_full/arisu-full.jpg",
     quote: "Hinako's daughter.",
     basics: [
       ["Family", "Daughter of Hinako and Hinako's former boyfriend."],
-      ["Care", "Currently cared for by Tachibana, Hinako, and Ryuu."],
+      ["Care", "Currently cared for by Tachibana, Hinako, and Ryuji."],
       ["First appeared", "Chapter 9."]
     ],
     answers: []
@@ -230,23 +237,29 @@ const hotspotContent = {
     caption: "Fumiya Hayashi writes manga under the name Hayashi Fumiya.",
     body:
       "Fumiya Hayashi is currently serializing Kemutai Hanashi on Kobunsha's web manga site COMIC Nettai. She also writes some blog on pixiv FANBOX with topics: thoughts, behind-the-scenes comments, sketches, roughs, and records from the production process.",
-    details: [
+    details: [],
+    sections: [
       {
-        label: "Works",
+        title: "Biography",
+        text:
+          "Fumiya Hayashi writes manga under the name Hayashi Fumiya. She is currently serializing Kemutai Hanashi on Kobunsha's web manga site COMIC Nettai."
+      },
+      {
+        title: "Works",
         text: "Kemutai Hanashi volume 7 onward is published by Kobunsha Nettai Comics. Seshuusei Triangle (Hereditary Triangle) is published in two volumes by KADOKAWA Beam Comics."
       },
       {
-        label: "Fanbox",
+        title: "FANBOX",
         text: "The posts are extra material, like DVD bonus commentary. You do not need them to understand the main story."
       },
       {
-        label: "Support",
+        title: "Support",
         text: "Support funds go toward manga equipment, supplies, reference materials, event costs, doujinshi production, and coffee or snacks while working."
       }
     ]
   },
   story: {
-    title: "Previous iterations",
+    title: "Pilot version",
     image: "/covers/pilot.png",
     caption: "Early Kemutai Hanashi material before the current serialization.",
     body:
@@ -360,7 +373,7 @@ app.innerHTML = `
         </button>
         <button class="simple-card" type="button" data-open="story">
           <span class="simple-icon simple-icon-story"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
-          <span class="simple-label">Story</span>
+          <span class="simple-label">Pilot version</span>
         </button>
         <button class="simple-card" type="button" data-open="volumes">
           <span class="simple-icon simple-icon-volumes"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
@@ -379,7 +392,7 @@ app.innerHTML = `
         <button class="popup-close" id="popup-close" type="button" aria-label="Close detail popup">×</button>
         <div class="popup-copy">
           <span class="popup-kicker">Discoverable Detail</span>
-          <h2 id="popup-title">Story Mood</h2>
+          <h2 id="popup-title">Pilot version</h2>
           <p id="popup-body"></p>
           <div class="popup-details" id="popup-details"></div>
         </div>
@@ -456,6 +469,24 @@ function resetMovement() {
   state.pressed.right = false;
 }
 
+function createRubyNameElement(name, className = "ruby-name") {
+  const wrapper = document.createElement("span");
+  wrapper.className = className;
+
+  const ruby = document.createElement("ruby");
+  ruby.textContent = name.kanji;
+  const reading = document.createElement("rt");
+  reading.textContent = name.kana;
+  ruby.appendChild(reading);
+
+  const romaji = document.createElement("span");
+  romaji.className = "ruby-name-romaji";
+  romaji.textContent = name.romaji;
+
+  wrapper.append(ruby, romaji);
+  return wrapper;
+}
+
 function setPopupContent(key) {
   const content = hotspotContent[key];
   if (!content) {
@@ -478,9 +509,31 @@ function setPopupContent(key) {
 
   if (key === "volumes") {
     renderVolumeArchive();
+  } else if (key === "author") {
+    renderAuthorSections();
   } else if (key === "curtains") {
     renderCharacterProfiles("takeda");
   }
+}
+
+function renderAuthorSections() {
+  const content = hotspotContent.author;
+  const panel = document.createElement("section");
+  panel.className = "author-sections";
+  panel.setAttribute("aria-label", "Author sections");
+
+  content.sections.forEach((section) => {
+    const block = document.createElement("section");
+    block.className = "author-section";
+    const heading = document.createElement("h3");
+    heading.textContent = section.title;
+    const paragraph = document.createElement("p");
+    paragraph.textContent = section.text;
+    block.append(heading, paragraph);
+    panel.appendChild(block);
+  });
+
+  popupDetails.replaceChildren(panel);
 }
 
 function renderCharacterProfiles(activeId) {
@@ -491,20 +544,27 @@ function renderCharacterProfiles(activeId) {
 
   const picker = document.createElement("div");
   picker.className = "character-picker";
-  Object.values(characterProfiles).forEach((character) => {
-    const id = character.name.toLowerCase();
+  Object.entries(characterProfiles).forEach(([id, character]) => {
     const button = document.createElement("button");
     button.className = "character-icon-button";
     button.type = "button";
     button.setAttribute("aria-pressed", String(id === activeId));
-    button.setAttribute("aria-label", `Show ${character.name}`);
-    button.innerHTML = `<img src="${character.icon}" alt="" /><span>${character.name}</span>`;
+    button.setAttribute("aria-label", `Show ${character.rubyName.romaji}`);
+
+    const icon = document.createElement("img");
+    icon.src = character.icon;
+    icon.alt = "";
+    button.append(icon, createRubyNameElement(character.rubyName, "ruby-name ruby-name-picker"));
     button.addEventListener("click", () => renderCharacterProfiles(id));
     picker.appendChild(button);
   });
 
   const textPanel = document.createElement("div");
   textPanel.className = "character-text";
+
+  const nameHeading = document.createElement("h3");
+  nameHeading.className = "character-name-heading";
+  nameHeading.appendChild(createRubyNameElement(profile.rubyName, "ruby-name ruby-name-large"));
 
   const quote = document.createElement("p");
   quote.className = "character-quote";
@@ -546,12 +606,12 @@ function renderCharacterProfiles(activeId) {
     pairOnlySections ? createSection("If they competed together...", characterMatchups, "lavender") : null
   ].filter(Boolean);
 
-  textPanel.append(quote, ...sections);
+  textPanel.append(nameHeading, quote, ...sections);
   panel.append(picker, textPanel);
   popupDetails.replaceChildren(panel);
   popupImage.src = profile.full;
-  popupImage.alt = `${profile.name} full-body character art`;
-  popupCaption.textContent = profile.name;
+  popupImage.alt = `${profile.rubyName.romaji} full-body character art`;
+  popupCaption.replaceChildren(createRubyNameElement(profile.rubyName, "ruby-name ruby-name-caption"));
 }
 
 function renderVolumeArchive() {
