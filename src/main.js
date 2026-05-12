@@ -70,7 +70,20 @@ const characterProfiles = {
       ["Job", "High-school teacher, teaching Japanese (literature)"],
       ["Relationship", "Roommates with Arita."],
       ["Students", "Currently teaches Japanese to Tsukiyama and Tachibana."],
+      ["Blood type", "O."],
+      ["Addressing Arita", "Uses Arita or omae."],
       ["First appeared", "Chapter 1."]
+    ],
+    trivia: [
+      ["Clothes", "Prefers subdued casual clothes, but his hair color makes even ordinary outfits look a little flashy."],
+      ["Past work", "Seems to have worked part-time at an izakaya and may have had other jobs."],
+      ["Voice", "Clear and distinct without sounding harsh, with resonance and a higher pitch. It may drop a little when he talks to Arita."],
+      ["Drawing", "A talented artist with a simple style that captures key features well. His student reputation rises when he draws on the blackboard."],
+      ["Handwriting", "Has beautiful handwriting, including clean blackboard writing."],
+      ["Dialect", "Normally speaks in a thick dialect, but it softens a little around Arita."],
+      ["Lying", "Capable of lying and probably does not feel much guilt about it."],
+      ["Arita", "Has zero intention of being apart from Arita and has more of a stalker streak than his appearance suggests."],
+      ["High school height", "He and Arita were almost exactly the same height, then Takeda became taller before they realized it."]
     ],
     answers: [
       ["First met Arita", "Around age 17."],
@@ -119,7 +132,24 @@ const characterProfiles = {
       ["Gender", "Male"],
       ["Job", "Florist at Yamaguchi Flower Shop. In the pilot version, he was a barber."],
       ["Relationship", "Roommates with Takeda. Works under Ryuji at Yamaguchi Flower Shop."],
+      ["Blood type", "A."],
+      ["Addressing Takeda", "Uses Takeda or kimi."],
       ["First appeared", "Chapter 1."]
+    ],
+    trivia: [
+      ["Clothes", "Dislikes constricting clothes, so he usually wears oversized, baggy sweatshirts."],
+      ["Socks and layers", "Hates wearing socks or layering, even though he is not especially sensitive to heat."],
+      ["Watch", "Does not wear a wristwatch because he dislikes that constricting feeling."],
+      ["Work history", "Has assisted at Ryuji's shop since university, so he probably has not worked elsewhere."],
+      ["Voice", "A voice with no outline. It carries clearly, then vanishes instantly."],
+      ["Drawing", "Has a unique art style. His own take is basically: is it really that bad, and who cares?"],
+      ["Humor", "In normal conversation, about 60% of what he says feels like a joke, whether or not the jokes land."],
+      ["Honesty", "Absolutely never lies and is very straightforward about admitting his faults or exposing his weaknesses."],
+      ["Dialect", "Speaks standard Japanese because he is not originally local."],
+      ["Handwriting", "His writing has unique quirks, but it is not bad handwriting."],
+      ["Personality", "Very my-pace. He does not force himself on others, but may go silent or cut ties rather than compromise on something involving himself."],
+      ["Takeda", "More dependent on, or obsessed with, Takeda than he looks."],
+      ["Earlier mood", "He seemed more energetic and laughed quite a bit before."]
     ],
     answers: [
       ["First met Takeda", "Around age 17."],
@@ -156,7 +186,7 @@ const characterProfiles = {
   },
   ryuu: {
     name: "Ryuji",
-    rubyName: { kanji: "龍二", kana: "りゅうじ", romaji: "Ryuji" },
+    rubyName: { kanji: "山口 龍二", kana: "やまぐち りゅうじ", romaji: "Yamaguchi Ryuji" },
     icon: "/character_icon/ryuu.jpg",
     full: "/character_full/ryuu-full.jpg",
     quote: "Manager and owner of Yamaguchi Flower Shop.",
@@ -195,7 +225,7 @@ const characterProfiles = {
   },
   hinako: {
     name: "Hinako",
-    rubyName: { kanji: "比奈子", kana: "ひなこ", romaji: "Hinako" },
+    rubyName: { kanji: "黒崎 比奈子", kana: "くろさき ひなこ", romaji: "Kurosaki Hinako" },
     icon: "/character_icon/hinato.jpg",
     full: "/character_full/hinato-full.jpg",
     quote: "An old classmate of Takeda.",
@@ -208,7 +238,7 @@ const characterProfiles = {
   },
   arisu: {
     name: "Arisu",
-    rubyName: { kanji: "ありす", kana: "ありす", romaji: "Arisu" },
+    rubyName: { kanji: "黒崎 ありす", kana: "くろさき ありす", romaji: "Kurosaki Arisu" },
     icon: "/character_icon/arisu.jpg",
     full: "/character_full/arisu-full.jpg",
     quote: "Hinako's daughter.",
@@ -217,6 +247,81 @@ const characterProfiles = {
       ["Care", "Currently cared for by Tachibana, Hinako, and Ryuji."],
       ["First appeared", "Chapter 9."]
     ],
+    answers: []
+  },
+  ojisan: {
+    name: "Oji-san",
+    rubyName: { kanji: "おじさん", kana: "おじさん", romaji: "Oji-san" },
+    quote: "A named older man from the supporting cast.",
+    basics: [["Name", "Oji-san."], ["Status", "Supporting character."]],
+    answers: []
+  },
+  kanzaki: {
+    name: "Kanzaki",
+    rubyName: { kanji: "神崎 先生", kana: "かんざき せんせい", romaji: "Kanzaki-sensei" },
+    quote: "Professor with round glasses in Chapter 4.",
+    icon: "/character_icon/kanzaki.png",
+    basics: [["Role", "Professor."], ["First appeared", "Chapter 4."], ["Visual note", "Wears round glasses."]],
+    answers: []
+  },
+  ichinose: {
+    name: "Ichinose",
+    rubyName: { kanji: "一ノ瀬 先生", kana: "いちのせ せんせい", romaji: "Ichinose-sensei" },
+    icon: "/character_icon/ichinose.png",
+    quote: "Head teacher.",
+    basics: [["Role", "Head teacher."]],
+    answers: []
+  },
+  fujiki: {
+    name: "Fujiki",
+    rubyName: { kanji: "藤木 先生", kana: "ふじき せんせい", romaji: "Touko Fujiki-sensei" },
+    quote: "Light-haired female teacher.",
+    icon: "/character_icon/fujiki.png",
+    basics: [["Role", "Teacher."], ["Visual note", "Light-haired female teacher."]],
+    answers: []
+  },
+  ninomiya: {
+    name: "Ninomiya",
+    rubyName: { kanji: "二宮 先生", kana: "にのみや せんせい", romaji: "Ninomiya-sensei" },
+    quote: "Short, black-haired teacher.",
+    icon: "/character_icon/ninomiya.png",
+    basics: [["Role", "Teacher."], ["Visual note", "Short black hair."]],
+    answers: []
+  },
+  akira: {
+    name: "Akira",
+    rubyName: { kanji: "黒崎 章", kana: "くろさき あきら", romaji: "Kurosaki Akira" },
+    quote: "Hinako's ex.",
+    basics: [["Relationship", "Hinako's former boyfriend."], ["Family", "Arisu's father."]],
+    answers: []
+  },
+  momoko: {
+    name: "Momoko",
+    rubyName: { kanji: "橘 里々子", kana: "たちばな ももこ", romaji: "Tachibana Momoko" },
+    quote: "A member of the supporting cast.",
+    basics: [["Full name", "Tachibana Momoko."]],
+    answers: []
+  },
+  koga: {
+    name: "Koga",
+    rubyName: { kanji: "古賀 沙織", kana: "こが さおり", romaji: "Koga Saori" },
+    quote: "A member of the supporting cast.",
+    basics: [["Full name", "Koga Saori."]],
+    answers: []
+  },
+  ootani: {
+    name: "Ootani",
+    rubyName: { kanji: "大谷", kana: "おおたに", romaji: "Ootani" },
+    quote: "A member of the supporting cast.",
+    basics: [["Name", "Ootani."]],
+    answers: []
+  },
+  chishima: {
+    name: "Chishima",
+    rubyName: { kanji: "千島", kana: "ちしま", romaji: "Chishima" },
+    icon: "/character_icon/chishima.png",
+    quote: "A member of the supporting cast.",
+    basics: [["Name", "Chishima."]],
     answers: []
   }
 };
@@ -230,6 +335,55 @@ const characterMatchups = [
   ["Verbal argument", "They would not do that."]
 ];
 
+const relationshipNotes = {
+  address: [
+    {
+      speaker: "Takeda",
+      tone: "red",
+      jp: "有田 / お前",
+      en: "Arita / Omae - informal \"you\""
+    },
+    {
+      speaker: "Arita",
+      tone: "blue",
+      jp: "武田 / 君",
+      en: "Takeda / Kimi - relatively formal or distant \"you\""
+    }
+  ],
+  general: [
+    {
+      question: "What is your public relationship?",
+      answer: "Housemates"
+    },
+    {
+      question: "What is your personal relationship?",
+      answer: "It's a story about searching for that."
+    }
+  ],
+  individual: [
+    {
+      question: "What do you think of the other's personality?",
+      takeda: "A serious person who doesn't lie.",
+      arita: "I think they're always getting the short end of the stick."
+    },
+    {
+      question: "What do you think of the other's face/appearance?",
+      takeda: "I think they are beautiful.",
+      arita: "I've never thought about it."
+    },
+    {
+      question: "What do you like or respect about the other?",
+      takeda: "The fact that they don't give up on their ideals.",
+      arita: "Their altruistic nature. They can act without expecting anything in return."
+    },
+    {
+      question: "What do you dislike or want them to change?",
+      takeda: "Nothing.",
+      arita: "I think it's okay if they asked for a little something in return once in a while."
+    }
+  ]
+};
+
 const hotspotContent = {
   author: {
     title: "About Fumiya Hayashi",
@@ -242,7 +396,7 @@ const hotspotContent = {
       {
         title: "Biography",
         text:
-          "Fumiya Hayashi writes manga under the name Hayashi Fumiya. She is currently serializing Kemutai Hanashi on Kobunsha's web manga site COMIC Nettai."
+          "Fumiya Hayashi writes manga under the name Hayashi Fumiya. Her birthday is February 9th. She is currently serializing Kemutai Hanashi on Kobunsha's web manga site COMIC Nettai."
       },
       {
         title: "Works",
@@ -255,6 +409,15 @@ const hotspotContent = {
       {
         title: "Support",
         text: "Support funds go toward manga equipment, supplies, reference materials, event costs, doujinshi production, and coffee or snacks while working."
+      },
+      {
+        title: "Social links",
+        text: "Uses the handle @fuhit0be.",
+        links: [
+          ["Twitter", "https://twitter.com/fuhit0be"],
+          ["Bluesky", "https://bsky.app/profile/fuhit0be.bsky.social"],
+          ["Instagram", "https://www.instagram.com/fuhit0be/"]
+        ]
       }
     ]
   },
@@ -300,8 +463,6 @@ const hotspotContent = {
     title: "Character notes",
     image: "/character_full/takeda-full.jpg",
     caption: "Choose a character to see their profile.",
-    body:
-      "The curtain opens into character information. Pick a character icon to read profile notes, relationship notes, and extra details.",
     details: []
   },
   balcony: {
@@ -530,6 +691,19 @@ function renderAuthorSections() {
     const paragraph = document.createElement("p");
     paragraph.textContent = section.text;
     block.append(heading, paragraph);
+    if (section.links?.length) {
+      const links = document.createElement("div");
+      links.className = "author-links";
+      section.links.forEach(([label, href]) => {
+        const link = document.createElement("a");
+        link.href = href;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.textContent = label;
+        links.appendChild(link);
+      });
+      block.appendChild(links);
+    }
     panel.appendChild(block);
   });
 
@@ -551,10 +725,18 @@ function renderCharacterProfiles(activeId) {
     button.setAttribute("aria-pressed", String(id === activeId));
     button.setAttribute("aria-label", `Show ${character.rubyName.romaji}`);
 
-    const icon = document.createElement("img");
-    icon.src = character.icon;
-    icon.alt = "";
-    button.append(icon, createRubyNameElement(character.rubyName, "ruby-name ruby-name-picker"));
+    if (character.icon) {
+      const icon = document.createElement("img");
+      icon.src = character.icon;
+      icon.alt = "";
+      button.appendChild(icon);
+    } else {
+      const fallback = document.createElement("span");
+      fallback.className = "character-icon-fallback";
+      fallback.textContent = character.rubyName.romaji.slice(0, 1);
+      button.appendChild(fallback);
+    }
+    button.appendChild(createRubyNameElement(character.rubyName, "ruby-name ruby-name-picker"));
     button.addEventListener("click", () => renderCharacterProfiles(id));
     picker.appendChild(button);
   });
@@ -596,21 +778,119 @@ function renderCharacterProfiles(activeId) {
     return section;
   };
 
+  const renderRelationshipNotes = () => {
+    const section = document.createElement("section");
+    section.className = "relationship-notes";
+
+    const createTwoSideBlock = (title, items) => {
+      const group = document.createElement("div");
+      group.className = "relationship-individual";
+      const groupHeading = document.createElement("h4");
+      groupHeading.textContent = title;
+      group.appendChild(groupHeading);
+      items.forEach((item) => {
+        const block = document.createElement("section");
+        block.className = "relationship-question";
+        block.innerHTML = `
+          <h4>${item.question}</h4>
+          <div class="relationship-answer-grid">
+            <div><strong>Takeda</strong><span>${item.takeda}</span></div>
+            <div><strong>Arita</strong><span>${item.arita}</span></div>
+          </div>
+        `;
+        group.appendChild(block);
+      });
+      return group;
+    };
+
+    const createPairComparisonItems = (takedaItems = [], aritaItems = []) =>
+      takedaItems.map(([label, takedaValue], index) => {
+        const aritaItem = aritaItems[index] ?? ["", ""];
+        return {
+          question: label.replace("Arita", "the other").replace("Takeda", "the other"),
+          takeda: takedaValue,
+          arita: aritaItem[1]
+        };
+      });
+
+    const competitionItems = characterMatchups.map(([label, result]) => {
+      let takeda = result;
+      let arita = result;
+      if (/\bTakeda\b/.test(result)) {
+        takeda = "Wins.";
+        arita = "Loses.";
+      } else if (/\bArita\b/.test(result)) {
+        takeda = "Loses.";
+        arita = "Wins.";
+      }
+      return { question: label, takeda, arita };
+    });
+
+    const heading = document.createElement("h3");
+    heading.textContent = "Pair quiz";
+
+    const addressHeading = document.createElement("h4");
+    addressHeading.textContent = "Addressing each other";
+
+    const addressGrid = document.createElement("div");
+    addressGrid.className = "relationship-address-grid";
+    relationshipNotes.address.forEach((item) => {
+      const bubble = document.createElement("div");
+      bubble.className = `relationship-bubble relationship-bubble-${item.tone}`;
+      bubble.innerHTML = `<strong>${item.speaker}</strong><span>${item.jp}</span><small>${item.en}</small>`;
+      addressGrid.appendChild(bubble);
+    });
+
+    const general = document.createElement("div");
+    general.className = "relationship-general";
+    const generalHeading = document.createElement("h4");
+    generalHeading.textContent = "General questions";
+    general.appendChild(generalHeading);
+    relationshipNotes.general.forEach((item) => {
+      const row = document.createElement("div");
+      row.className = "relationship-row";
+      row.innerHTML = `<strong>${item.question}</strong><b>${item.answer}</b>`;
+      general.appendChild(row);
+    });
+
+    const individual = createTwoSideBlock("Individual responses", relationshipNotes.individual);
+    const notes = createTwoSideBlock(
+      "Notes",
+      createPairComparisonItems(characterProfiles.takeda.answers, characterProfiles.arita.answers)
+    );
+    const vector = createTwoSideBlock(
+      "Relationship vector",
+      createPairComparisonItems(characterProfiles.takeda.vector, characterProfiles.arita.vector)
+    );
+    const competition = createTwoSideBlock("If they competed together...", competitionItems);
+
+    section.append(heading, addressHeading, addressGrid, general, individual, notes, vector, competition);
+    return section;
+  };
+
   const pairOnlySections = activeId === "takeda" || activeId === "arita";
   const sections = [
     createSection("Profile", profile.basics, "cream"),
-    createSection("Notes", profile.answers, "blue"),
-    createSection("Relationship vector", profile.vector, "lavender"),
+    createSection("Trivia", profile.trivia, "green"),
+    pairOnlySections ? null : createSection("Notes", profile.answers, "blue"),
+    pairOnlySections ? null : createSection("Relationship vector", profile.vector, "lavender"),
     createSection("Hands", profile.handNotes, "peach"),
     createSection("Can they eat a huge hamburger skillfully?", profile.hamburger, "green", "hamburger-section"),
-    pairOnlySections ? createSection("If they competed together...", characterMatchups, "lavender") : null
+    pairOnlySections ? renderRelationshipNotes() : null
   ].filter(Boolean);
 
   textPanel.append(nameHeading, quote, ...sections);
   panel.append(picker, textPanel);
   popupDetails.replaceChildren(panel);
-  popupImage.src = profile.full;
-  popupImage.alt = `${profile.rubyName.romaji} full-body character art`;
+  if (profile.full) {
+    popupImage.hidden = false;
+    popupImage.src = profile.full;
+    popupImage.alt = `${profile.rubyName.romaji} full-body character art`;
+  } else {
+    popupImage.hidden = true;
+    popupImage.removeAttribute("src");
+    popupImage.alt = "";
+  }
   popupCaption.replaceChildren(createRubyNameElement(profile.rubyName, "ruby-name ruby-name-caption"));
 }
 
