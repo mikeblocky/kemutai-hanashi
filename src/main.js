@@ -68,6 +68,8 @@ const characterProfiles = {
       ["Height", "177 cm, presumably from the pilot version."],
       ["Gender", "Male"],
       ["Job", "High-school teacher, teaching Japanese (literature)"],
+      ["Family", "Two older sisters (names unknown)."],
+      ["Biology Club", "Forced into being the advisor for the club."],
       ["Relationship", "Roommates with Arita."],
       ["Students", "Currently teaches Japanese to Tsukiyama and Tachibana."],
       ["Blood type", "O."],
@@ -75,12 +77,16 @@ const characterProfiles = {
       ["First appeared", "Chapter 1."]
     ],
     trivia: [
-      ["Clothes", "Prefers subdued casual clothes, but his hair color makes even ordinary outfits look a little flashy."],
+      ["Clothes", "Average height and build that looks good in Uniqlo. Likes 3/4 length sleeves and dress shirts; often seen with rolled-up sleeves."],
+      ["Physique", "Looks soft but has a lean physical presence when touched."],
+      ["Alcohol", "A stronger drinker than Arita."],
+      ["Teaching", "Loves watching the process of people \"thinking desperately\" to find their own answers."],
+      ["Priorities", "Strangers and himself are treated with equal weight (Important = Stranger, Himself)."],
       ["Past work", "Seems to have worked part-time at an izakaya and may have had other jobs."],
-      ["Voice", "Clear and distinct without sounding harsh, with resonance and a higher pitch. It may drop a little when he talks to Arita."],
+      ["Voice", "Higher and clearer, but softens significantly when he talks with Arita."],
       ["Drawing", "A talented artist with a simple style that captures key features well. His student reputation rises when he draws on the blackboard."],
       ["Handwriting", "Has beautiful handwriting, including clean blackboard writing."],
-      ["Dialect", "Normally speaks in a thick dialect, but it softens a little around Arita."],
+      ["Dialect", "A soft mix of different areas from the Northern Kyushu region."],
       ["Lying", "Capable of lying and probably does not feel much guilt about it."],
       ["Arita", "Has zero intention of being apart from Arita and has more of a stalker streak than his appearance suggests."],
       ["High school height", "He and Arita were almost exactly the same height, then Takeda became taller before they realized it."]
@@ -131,21 +137,28 @@ const characterProfiles = {
       ["Height", "173 cm, presumably."],
       ["Gender", "Male"],
       ["Job", "Florist at Yamaguchi Flower Shop. In the pilot version, he was a barber."],
+      ["Family", "Older brother (Masa Arita) and a younger sister."],
+      ["Career path", "Chose a trade over studying, as he wasn't a big fan of school."],
       ["Relationship", "Roommates with Takeda. Works under Ryuji at Yamaguchi Flower Shop."],
       ["Blood type", "A."],
       ["Addressing Takeda", "Uses Takeda or kimi."],
       ["First appeared", "Chapter 1."]
     ],
     trivia: [
-      ["Clothes", "Dislikes constricting clothes, so he usually wears oversized, baggy sweatshirts."],
+      ["Clothes", "Doesn’t have much interest in fashion; wears whatever is comfortable. Likes loose, baggy clothes that don't feel restrictive."],
+      ["Physique", "Has a solid core and a somewhat boyish, firm physique."],
+      ["Alcohol", "Not as strong a drinker as Takeda."],
+      ["Hands", "Getting rough from florist work. If he uses hand cream, it's usually just Nivea."],
+      ["Work uniform", "Flower Shop Yamaguchi has matching T-shirts and aprons (designed by Ryuji), but Arita finds them restrictive and often leaves them off."],
+      ["Priorities", "Important person > Complete stranger > Himself."],
       ["Socks and layers", "Hates wearing socks or layering, even though he is not especially sensitive to heat."],
       ["Watch", "Does not wear a wristwatch because he dislikes that constricting feeling."],
       ["Work history", "Has assisted at Ryuji's shop since university, so he probably has not worked elsewhere."],
-      ["Voice", "A voice with no outline. It carries clearly, then vanishes instantly."],
+      ["Voice", "Lower voice, though it mainly seems that way because he speaks so quietly."],
       ["Drawing", "Has a unique art style. His own take is basically: is it really that bad, and who cares?"],
       ["Humor", "In normal conversation, about 60% of what he says feels like a joke, whether or not the jokes land."],
       ["Honesty", "Absolutely never lies and is very straightforward about admitting his faults or exposing his weaknesses."],
-      ["Dialect", "Speaks standard Japanese because he is not originally local."],
+      ["Dialect", "A soft mix of Northern Kyushu dialects."],
       ["Handwriting", "His writing has unique quirks, but it is not bad handwriting."],
       ["Personality", "Very my-pace. He does not force himself on others, but may go silent or cut ties rather than compromise on something involving himself."],
       ["Takeda", "More dependent on, or obsessed with, Takeda than he looks."],
@@ -192,6 +205,7 @@ const characterProfiles = {
     quote: "Manager and owner of Yamaguchi Flower Shop.",
     basics: [
       ["Job", "Florist manager and owner at Yamaguchi Flower Shop."],
+      ["Uniform", "Designed the shop's matching T-shirts and aprons; wears his every day."],
       ["Relationship", "Connected with Hinako. Arita works at his flower shop."],
       ["First appeared", "Chapter 3."]
     ],
@@ -232,6 +246,7 @@ const characterProfiles = {
     basics: [
       ["Relationship", "Old classmate of Takeda."],
       ["Family", "Arisu's mother."],
+      ["Diet", "Loves sweets, but very conscious about maintaining her figure and tries to hold back."],
       ["First appeared", "Chapter 9."]
     ],
     answers: []
@@ -244,7 +259,9 @@ const characterProfiles = {
     quote: "Hinako's daughter.",
     basics: [
       ["Family", "Daughter of Hinako and Hinako's former boyfriend."],
+      ["Future", "Assumed to grow up to be a beautiful girl."],
       ["Care", "Currently cared for by Tachibana, Hinako, and Ryuji."],
+      ["Influence", "Likely to get her ears pierced due to Arita's influence."],
       ["First appeared", "Chapter 9."]
     ],
     answers: []
@@ -396,7 +413,7 @@ const hotspotContent = {
       {
         title: "Biography",
         text:
-          "Fumiya Hayashi writes manga under the name Hayashi Fumiya. Her birthday is February 9th. She is currently serializing Kemutai Hanashi on Kobunsha's web manga site COMIC Nettai."
+          "Fumiya Hayashi writes manga under the name Hayashi Fumiya. Her birthday is February 9th. She is currently living in Fukuoka and is serializing Kemutai Hanashi on Kobunsha's web manga site COMIC Nettai."
       },
       {
         title: "Works",
@@ -429,16 +446,20 @@ const hotspotContent = {
       "Before the current version, Kemutai Hanashi had earlier doujin and pilot forms. Some ideas from those versions were later reused or reshaped while writing the serialized chapters.",
     details: [
       {
+        label: "Setting",
+        text: "The story takes place in a fictional city modeled after an area near the sea of Fukuoka."
+      },
+      {
+        label: "Naming",
+        text: "Characters are named after Kyushu train stations. 'Arita' is taken as is, while 'Takeda' comes from one character of Takeo-Onsen Station (neighboring stations on the limited express line)."
+      },
+      {
         label: "Doujin edition",
         text: "Rekishi ni wa Naranai: Kemutai Hanashi Doujin Edition collects these earlier versions."
       },
       {
         label: "Included works",
         text: "Transparent Umbrella; Tomorrow's Tomorrow; Reverse Thorn; Kemutai Hanashi; Flowers in a Storm; and a newly drawn story."
-      },
-      {
-        label: "Paper-first pieces",
-        text: "Reverse Thorn, Kemutai Hanashi, Flowers in a Storm, and the newly drawn story were first published in print in this collection."
       }
     ]
   },
